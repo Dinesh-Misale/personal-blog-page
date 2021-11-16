@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p> <%= homecontent %> </p>
+
+<% postlist.forEach(function(element){ %>
+  <%  var shortDes = element.description.slice(0, 100); %>
+  <%  var title = element.title %>
+  <h3> <%= title %> </h3>
+  <p style="display: inline;"> <%= shortDes %>... </p>
+  <a href="/post/<%= title %>">read more</a>
+<% }); %>
+
+<%- include("partials/footer") -%>
+
